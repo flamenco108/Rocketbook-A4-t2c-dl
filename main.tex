@@ -1,0 +1,114 @@
+%article=mwart;book=mwbk;report=mwrep
+%\documentclass[10pt,oneside]{mwbk} %polish style
+\documentclass[10pt]{article} %international style
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=11mm]{geometry}
+\usepackage{color}
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+\usepackage{float}
+
+%%%---------------------------
+% Rectangle border for scanner
+%%%---------------------------
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{eso-pic}
+\AddToShipoutPictureBG{%
+\begin{tikzpicture}[overlay,remember picture]
+\draw[line width=8pt]
+    ($ (current page.north west) + (1cm,-1cm) $)
+    rectangle
+    ($ (current page.south east) + (-1cm,1cm) $);
+\end{tikzpicture}
+}
+%%%---------------------------
+
+
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{nicematrix}
+\usepackage{array} % and/or
+\usepackage{longtable} % and/or
+\usepackage{colortab} % or
+\usepackage{colortbl}
+\usepackage{arydshln} % below some settings
+
+\setlength{\dashlinedash}{1pt} % dash length
+%\setlength{\dashlinegap}{4.5pt}
+\setlength{\dashlinegap}{2.5pt} % gap between dashes
+\setlength{\arrayrulewidth}{0.7pt} % line thickness
+
+
+
+\begin{document}
+\pagenumbering{gobble} % no page number
+
+%%%---------------------------
+% Bottom page necessary images
+%%%---------------------------
+\begin{tikzpicture}[overlay, remember picture]
+\node [shift={(92mm,-242mm)}]  %at (current page.south west)
+{%
+%\fbox{\includegraphics[width=190mm]{img/!bottom+qr.jpg}}};
+\includegraphics[width=191mm]{img/!bottom+qr.jpg}
+};
+\end{tikzpicture}
+%%%---------------------------
+
+%%%---------------------------
+% PUT HERE ANYTHING ELSE
+%%%---------------------------
+
+%%%---------------------------
+% inserting simple table 2 cols
+%%%---------------------------
+
+\vspace{1cm}
+
+\renewcommand{\arraystretch}{3.5} % vertical width of the row/cell (height of the row)
+\begin{center}
+
+
+ \begin{tabularx}{\textwidth} { X : X } % { column separator(: |) column }
+\hdashline
+  &   \\ % write as many separators (&) as above (:)
+\hdashline
+   &   \\
+\hdashline
+  &   \\
+\hdashline
+   &   \\
+\hdashline
+  &   \\
+\hdashline
+   &   \\
+\hdashline
+  &   \\
+\hdashline
+   &   \\
+\hdashline
+  &   \\
+\hdashline
+   &   \\
+\hdashline
+   &   \\
+\hdashline
+  &   \\
+\hdashline
+   &   \\
+\hdashline
+   &   \\
+\hdashline
+
+\end{tabularx}
+\end{center}
+
+
+
+
+\end{document} 
